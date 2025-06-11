@@ -1,7 +1,9 @@
 import { useState } from 'react'
 import './App.css'
 
-const BACKEND_URL = 'https://backend-shorturl-6gsk.onrender.com';
+// const BACKEND_URL = 'https://backend-shorturl-6gsk.onrender.com';
+const BACKEND_URL='https://backend-shorturl-6gsk.onrender.com'
+// const BACKEND_URL='http://localhost:5000'
 
 function App() {
   const [url, setUrl] = useState('')
@@ -31,7 +33,7 @@ function App() {
       }
 
       // Store the full backend URL with the short code
-      setShortUrl(`yourShortURL/${data.shortUrl.split('/').pop()}`)
+      setShortUrl(`${BACKEND_URL}/${data.shortUrl}`)
       // Store the original URL from the response
       setOriginalUrl(data.originalUrl)
     } catch (err) {
